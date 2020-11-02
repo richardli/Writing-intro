@@ -1,0 +1,46 @@
+\documentclass{article}
+% Formatting
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+% Math
+% https://www.overleaf.com/learn/latex/Mathematical_expressions
+% https://en.wikibooks.org/wiki/LaTeX/Mathematics
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+% Images
+% https://www.overleaf.com/learn/latex/Inserting_Images
+% https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+\usepackage{graphicx,float}
+% References
+% https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
+% https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
+\usepackage[sort, round]{natbib}
+
+% Title content
+\title{A Template}
+\author{Your Name}
+\date{December 30, 2020}
+
+\begin{document}
+
+\maketitle
+
+% Abstract
+\begin{abstract}
+    Add your abstract here.
+\end{abstract}
+
+% Introduction and Overview
+\section{Introduction}
+\label{sec:intro}
+Some examples:
+\begin{itemize}
+    \item citations: \citep{cox1972regression} and \citet{cox1972regression}.
+    \item references to sections/figures/tables: Section \ref{sec:intro}. 
+\end{itemize}
+
+
+\bibliographystyle{unsrtnat}
+\bibliography{mybib}
+\end{document}
