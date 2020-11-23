@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Write! Write! Write!</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Z Richard Li" />
+    <link href="Writing-for-statisticians_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="Writing-for-statisticians_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Write! Write! Write!
+### Z Richard Li
+### Fall, 2020
+
+---
+
+
+# You will write a lot, I mean, really a lot 
+
+In academia, there is a **a lot** of writing: papers, thesis, lectures, proposals, ...
+
+--
+
+Writing well helps a lot to get your papers published, your work more visible, and your arguments more convincing.
+
+--
+
+&lt;span style="color:blue"&gt;Part I&lt;/span&gt;
++ How to write well 
++ Writing technical material
+
+--
+
+&lt;span style="color:blue"&gt;Part II&lt;/span&gt;
++ LateX and BibTeX
++ Reproducibility and R Markdown
+
+---
+### _Writing is a horrible, exhausting struggle, like a long bout of some painful illness_
+.right[George Orwell (1903 – 1950) Author and Journalist]
+
+
+
+Writing is a struggle, for _everyone_. 
+
+
+
+Can we really learn "how to write well" in an hour? Apparently not :)
+
+--
+
+Important topics I will not cover today include
++ Word choice
++ Grammar
++ Punctuation
++ ...
+
+--
+
+I will focus on a few 'big picture' principles instead. 
+
+---
+### _Easy reading is damn hard writing_
+.right[Nathaniel Hawthorne (1804 -- 1864) Novelist]
+
+#### Which do you prefer?
+* The promise of our new approach is reduction of bias.
+* Our new approach promises to reduce bias.
+
+--
+
+#### Principles of clarity
+* Make main character subjects.
+* Make important actions verbs.
+
+---
+### _Learn as much by writing as by reading_
+.right[Baron John Acton (1834–1902) Historian and Moralist]
+
+
+A _sometimes useful_ advice: avoid writing in passive voice. 
+
+--
+
+Over-using passive voice is a common mistake:	
+
+- The bias was reduced by our approach.
+
+--
+
+But sometimes can be helpful in discussing abstract ideas:
+
+- Super-efficiency has been seen in some Bayesian estimators.
+
+--
+
+A better advice: _make your 'character' the subject and go to your point quickly._
+
+
+&lt;img src="img/arya.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+
+---
+### _The difficulty is not to write, but to write what you mean_
+.right[Robert Louis Stevenson (1850 –- 1894) Novelist and Travel Writer]
+
+
+
+Your paper is not just about the information, it is actual communication.
+
+--
+
+Tell a story.
+--
+	
+- Why you are writing the paper?
+- What is the sequence of ideas you want to tell the reader?
+- Will the reader be interested/curious when reading my paper?
+
+--
+
+Use minimalism to achieve clarity.
+--
+
+- Is it possible to preserve my message without that X?
+- Decide 2-3 points you want every reader to remember from your paper.
+- Keep each paragraph to a single message.
+
+--
+
+Be precise.
+--
+
+- 'worked quite well' or 'had X% better accuracy than'
+- 'did not work' or 'failed to converge'
+
+
+
+---
+### _Every single word that I publish, I write at least six times_
+.right[Paul Halmos, Author, 'How to write mathematics']
+
+#### Editing matters
+--
+
++ If an explanation 'sort-of' works to you, your reader will be totally lost.
+--
+
++ Catching your own errors is hard. Reading sections aloud may help. 
+--
+
++ Version control your writing (remember our git tutorial?)
+--
+
++ Get someone to read through your writing.
+&lt;!-- + Leave your writing for a while and come back to it. --&gt;
+  
+--
+
+#### Editing takes time
+--
+
++ The return of repeated editing diminish eventually, but you probably have a deadline before then.  
+--
+
++ Insufficient editing is obvious -- and unimpressive.
+--
+
++ Over-edited papers are rare. But over-editing is common!
+--
+
+--
+
++ My strategy is to first write everything I have in mind down, before fine tuning each sentence in the introduction to make them perfectly fit in their boxes (unless I really feel the urge to do that). 
+--
+
++ You should develop your own strategy that works for you. 
+
+
+
+---
+# Writing technical materials
+
+In general, rules of formal writing apply.
+
+--
+
+Even in math-y materials, everything should be in complete sentences.
+- Bad:    Consider `\(\hat\theta_n, n &gt; p\)`.
+- Good:   Consider `\(\hat\theta_n\)`, where `\(n &gt; p\)`.
+- Better: Consider the estimator `\(\hat\theta_n\)`, where `\(n &gt; p\)`.
+
+--
+
+Be precise with words:
+- principle components or principal components
+- causal or casual
+- the 'statistical' meaning vs the 'lay' meaning: confidence, consistent, robust, profile, ... 
+
+--
+
+Show the relevant information:
+- graphics with clear annotations.
+- explain what is in the table/figure in captions.
+
+---
+# Main takeaways
+1. Do not be afraid of writing.
+2. Write to tell a story: within a sentence, paragraph, and paper.
+3. Be formal, precise, and clear.
+4. Edit your writing.
+ 
+
+--
+.center[
+# Break? 
+]
+
+---
+# LaTeX 
+
+LaTeX is a software system for document preparation.
+	
+    \documentclass{article}
+    \title{An example}
+    \author{Your Name}
+    \begin{document}
+    \maketitle
+    \section{Introduction}
+    \begin{equation}
+        \mu_{it} = \alpha + \beta_{it}
+    \end{equation}
+    %\bibliographystyle{apalike} 
+    %\bibliography{mybib}
+    \end{document}
+    
+--
+
+How to compile LaTeX documents
+- [Overleaf](https://www.overleaf.com/) is a useful place to start.
+- My setup: [Sublime Text](https://www.sublimetext.com/) + [LaTeXTools](https://latextools.readthedocs.io/en/latest/). 
+- Using a [Makefile](https://github.com/richardli/Writing-intro/blob/master/tex-examples/Makefile) from command line.
+- There are many other editors.
+
+
+---
+# BibTex
+
+BibTex is a plain text database.
+
+    @article{cox1972regression, 
+        author = {Cox, D. R.},
+        title = {Regression Models and Life-tables (with Discussion)},
+        year = {1972},
+        journal = {Journal of the Royal Statistical
+        Society, Series B: Methodological},
+        volume = {34},
+        pages = {187--220} 
+    }
+
+--
+
++ The citation key should be sane, short, and easier to identify for you and your collaborators, e.g. _last-name-year-first-word_
+
+
+--
+
++ Protect upper/lower cases with {}, e.g., `a {B}ayesian approach`; `Mike D'{A}ntoni`
+
+--
+
++ A somewhat strange compile workflow (sometimes handled by your editor internally): LaTeX -&gt; BibTex -&gt; LaTeX -&gt; LaTeX
+
+
+---
+# BibTex
+
++ Google scholar gives these in plain text. So do many publisher's sites. Auto-generated bib entries are (usually) not perfect, so be sure to check them. 
+
+--
+
++ Some bib database management software are also popular: Zotero, Mendeley, JabRef, etc.  
+
+--
+
++ Check with your target journal what bib style they use. Use `\bibliographystyle{}` to specify appropriate styles. `natbib` is usually helpful.
+
+--
+
++ In general, if you wonder if you should cite something, then you probably should. These include: technical report, news report, blog quote, personal communication, data sources, R packages, ... 
+
+
+---
+# Reproducible research
+
+The purpose of research is not just solving a problem, but to teach people how to solve similar problems. 
+
+--
+
+A good research paper should contain enough information to allow an informed reader to reproduce/verify the results.
+--
+
+- proofs
+- implementable algorithms and parameter settings
+- data or how to obtain the data (whenever possible)
+
+--
+
+Informal documents can usually also benefit greatly from reproducibility.
+
+--
+
+What's the benefit for _you_?
+- You usually need to re-run your analysis or re-visit some parts of the project in the future. 
+- You can more easily recycle re-useable parts for the future.
+- Collaborators like you more!
+
+---
+# R Markdown 
+The idea behind dynamic documents: code + narrative = report.
+
+--
+
+Others can reproduce the analysis and read your analysis together with codes and data: easier for others to understand your work and identify places of potential improvements.
+
+--
+
+The automation of documentation also minimizes cutting and pasting, where errors usually happen.
+
+--
+
+It also improves research product pipeline (e.g., periodic routine reports with new data).  
+
+--
+
+R Markdown has a short history. It was introduced by Yihui Xie in the `knitr` package in 2012. It quickly became the more popular format for dynamic documents.
+
+---
+# Basic format options
+
+A generic **linear regression** model example:
+
+
+```r
+data(cars)
+fit &lt;- lm(dist ~ speed, data = cars)
+plot(fit)
+```
+
+&lt;img src="Writing-for-statisticians_files/figure-html/unnamed-chunk-2-1.png" width="25%" /&gt;&lt;img src="Writing-for-statisticians_files/figure-html/unnamed-chunk-2-2.png" width="25%" /&gt;&lt;img src="Writing-for-statisticians_files/figure-html/unnamed-chunk-2-3.png" width="25%" /&gt;&lt;img src="Writing-for-statisticians_files/figure-html/unnamed-chunk-2-4.png" width="25%" /&gt;
+
+The slope of the regression is 3.932.
+
+
+---
+# Basic format options
+
+Behind the scenes, this is what the codes look like:
+
+    A generic **linear regression** model example:
+
+    ```{r, out.width = '25%'}
+    data(cars)
+    fit &lt;- lm(dist ~ speed, data = cars)
+    plot(fit)
+    ```
+    The slope of the regression is `r round(coef(fit)[2], 3)`.
+
+--
+
+Basically you need
++ Text with simple formatting
++ Code chunks with options 
++ Inline code results
+
+_More details: [R Markdown Cheat Sheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) and StackOverflow_
+
+---
+# Basic format options
+R Markdown document starts with a chunk of YAML metadata:
+
+    ---
+    title: The Real North
+    author: Jon Snow
+    date: 2021-01-01
+    output:
+      pdf_document:
+        toc: true
+    ---
+
+You can (almost) treat the narrative part in the R Markdown file as a LaTeX document and write many backslashes (when compiling pdf output), or you can use markdown syntax.
+
+
+---
+# Advanced format options
+
+There are many additional packages in R that make output prettier (not all work seamlessly with pdf output unfortunately).
+
+
+
+```r
+library(dplyr)
+library(knitr)
+library(xtable)
+
+fit %&gt;% summary() %&gt;% xtable() %&gt;% kable(digits=4)
+```
+
+
+
+|            | Estimate| Std. Error| t value| Pr(&gt;&amp;#124;t&amp;#124;)|
+|:-----------|--------:|----------:|-------:|------------------:|
+|(Intercept) | -17.5791|     6.7584| -2.6011|             0.0123|
+|speed       |   3.9324|     0.4155|  9.4640|             0.0000|
+
+
+---
+# More about R Markdown
+
+- More tips:
+    + Use relative paths.
+    + Set seed.
+    + Follow a style guide in coding, tidy your codes manually or with `Tidy = TRUE`.
+    + Use `session_info()` to document package versions.
+    + Use README file to give moreb instructions (package versions, directory structures, any additional dependencies).
+
+--
+
+- [A longer template example](https://github.com/jkang37/R-Markdown-Template)  from Jizhou Kang.
+
+--
+
+- R Markdown is a great tool, but sometimes it falls short. 
+    - For example, if your analysis contains long computation and/or large dataset. 
+    - For your research purposes, it is more important to think about what your reproducible research flow should look like.
+
+--
+
+- &lt;span style="color:royalblue"&gt;The goal of most writing is to convey the information and message (to others or to yourself). When writing R Markdown documents, rules of good writing still apply.&lt;/span&gt;
+
+
+
+---
+# Resources
+
+#### Writing scientific papers
++ [Writing Technical Papers or Reports (Ehrenberg, 1982)](https://www.jstor.org/stable/2683079)
++ [The Science of Scientific Writing (Gopen and Swan, 1990)](https://www.jstor.org/stable/29774235)
++ [Novelist Cormac McCarthy's tips on how to write a great science paper (Savage and Yeh, 2019)](https://www.nature.com/articles/d41586-019-02918-5)
++ [John Lee's notes on writing mathematics](https://sites.math.washington.edu/~lee/Courses/583-2005/writing.pdf)
++ [Andrew Gelman's advice on two articles](https://statmodeling.stat.columbia.edu/2009/07/30/advice_on_writi/)
+ 
+#### Reproducibility and R Markdown
++ [Coursera Course on Reproducible Research (free) by Roger Peng, Jeff Leak, and Brian Caffo](https://www.coursera.org/learn/reproducible-research)
++ [Reproducible Research: A Retrospective (Peng and Hicks, 2020)](https://arxiv.org/abs/2007.12210)
++ [R Markdown tutorial from RStudio](https://rmarkdown.rstudio.com/lesson-1.html)
++ [R Markdown Cheat Sheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
++ [R Markdown: the Definitive Guide (Xie et al. 2020)](https://bookdown.org/yihui/rmarkdown/)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
