@@ -1,9 +1,10 @@
 ---
-title: "Write! Write! Write!"
+title: "Writing for Statisticians"
 author: "Z Richard Li"
-date: Fall, 2021
+date: Fall, 2024
 output:
   xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts]
     nature:
       highlightStyle: github
       highlightLines: true
@@ -12,33 +13,13 @@ output:
 
 # You will write a lot, I mean, really a lot 
 
-In academia, there is a **a lot** of writing: papers, thesis, lectures, proposals, ...
+In academia and beyond, there is a **a lot** of writing: papers, thesis, lectures, proposals, reports, analysis plans, ...
 
 --
 
 Writing well helps a lot to get your papers published, your work more visible, and your arguments more convincing.
 
 --
-
-<span style="color:blue">Part I</span>
-+ How to write well 
-+ Writing technical material
-
---
-
-<span style="color:blue">Part II</span>
-+ LateX and BibTeX
-+ Reproducibility and R Markdown
-
----
-### _Writing is a horrible, exhausting struggle, like a long bout of some painful illness_
-.right[George Orwell (1903 – 1950) Author and Journalist]
-
-
-
-Writing is a struggle, for _everyone_. 
-
-
 
 Can we really learn "how to write well" in an hour? Apparently not :)
 
@@ -54,11 +35,218 @@ Important topics I will not cover today include
 
 I will focus on a few 'big picture' principles instead. 
 
+
+
 ---
-### _Easy reading is damn hard writing_
+# Writing is a struggle for everyone
+
+### _Writing is a horrible, exhausting struggle, like a long bout of some painful illness_
+.right[George Orwell (1903 – 1950) Author and Journalist]
+
+
+---
+# Why do we write?
+
+--
+
+The goal of writing anything is usually **communication**. 
+
+--
+
+We start with some complex ideas, data analysis, years of messing around some combinations of math, theorems, computer codes, data insights, nuances, ...
+
+--
+
+We need to turn them into understandable summaries that are 
++ accessible
++ actionable 
++ clear and precise
++ transparent and trustable
+
+
+--
+
+What is missing?
+
+--
+
+All the above are relative to what the **target audience** is. So always be clear about: <span style="color:royalblue">who am I writing this to, and who might want to read what I write!</span>
+
+
+
+---
+# How do we write well?
+
+--
+
+#### _Learn as much by writing as by reading_
+.right[Baron John Acton (1834–1902) Historian and Moralist]
+
+--
+
+#### _Easy reading is damn hard writing_
 .right[Nathaniel Hawthorne (1804 -- 1864) Novelist]
 
-#### Which do you prefer?
+--
+
+###<span style="color:royalblue"> The best way to learn how to write well is through reading and reflecting on what you read.</span>
+
+
+---
+# How do academic papers communicate (1)
+
+Usually, a statistics paper are structured into Abstract -> Introduction -> Methods -> Evaluations -> Discussion.
+
+--
+
+**Abstract**: a concise summary of the entire paper (more later)
+
+--
+
+**Introduction**: what you want your reader to know
+
+--
+
+Clear context and motivation: what problem you are addressing and why it is important. It may include both a scientific problem and statistical problems.
+
+--
+
+Literature review: what has been done now and how are they related to your work.
+
+--
+
+Your proposal: what you did and how does it contribute to the field.
+
+--
+
+<span style="color:red">Write as if you are reading: </span> would I be interested in keep reading the paper?
+
+--
+
+<span style="color:royalblue">Practically: </span> I usually write the introduction early to clear my mind on what I want to write in the paper, repeatedly edit it, and usually finish the section at the very end of the writing process. 
+
+
+
+---
+# How do academic papers communicate (2)
+
+--
+
+**Methods section(s)**: 
+
++ You probably spend most of the time developing the technical aspect of this section. But you effort and word count is likely not proportional. 
+
+--
+
++ Often the section(s) consist of the main outline of methods. Many details may be left to the appendix. 
+
+--
+
++ The section(s) need to be self-contained with clear notations established, assumptions stated, and model choice justified. Do not assume your reader thinks the same way as you and uses the same notations by default. 
+
+--
+
++ When the method is complicated and layered, the method section(s) may need a story arc (just like when organizing the paper) for readers to follow.  
+
+
+---
+# How do academic papers communicate (3)
+
+**Result section(s)**: 
+
+--
++ Structure the results logically 
++ Demonstrate validity
++ Demonstrate comparisons
++ Highlight scientific importance and interpretations
+
+
+--
+
+**Discussion**: 
+
+--
+
++ Summarize your work: imagine your reader skip directly to here after reading the title.
++ Summarize your contributions and what new insights you bring.
++ Discuss limitations.
+
+--
+
+<span style="color:royalblue">Practically: </span> I usually formally write the discussions last, but I keep track of the limitations that I would like to discuss here throughout the writing process. 
+
+
+---
+# The structure of the paper
+
+A good analysis, theorem, or model $\neq$ a good paper.
+
+--
+
+A paper needs to have a story arc:  There should be a problem, potentially some unsuccessful solutions, and a solution that you can recommend (potentially with caveats).
+
+
+```{r echo = FALSE, out.width = "50%", fig.align = 'center'}
+knitr::include_graphics("img/arya.png")
+```
+
+--
+
+<span style="color:royalblue">And the story needs to be told with the audience in mind!</span> 
+
+---
+# There should be stories within stories
+
+```{r echo = FALSE, out.width = "70%", fig.align = 'center'}
+knitr::include_graphics("img/bran.webp")
+```
+
+
+---
+# Take the abstract for example
+
+```{r echo = FALSE, out.width = "100%", fig.align = 'center'}
+knitr::include_graphics("img/nature.png")
+```
+
+
+---
+# Statistics abstract example 1
+
+```{r echo = FALSE, out.width = "100%", fig.align = 'center'}
+knitr::include_graphics("img/abstract1.png")
+```
+
+
+---
+# Statistics abstract example 2
+
+```{r echo = FALSE, out.width = "100%", fig.align = 'center'}
+knitr::include_graphics("img/abstract2.png")
+```
+
+---
+# More generally in storytelling
+
+It is impossible to define a specific formula for writing scientific papers. The meat of the paper can have many flavors. 
+
+
+--
+The general principle of storytelling holds in all sections
+
+- Why you are writing the paper?
+- What is the sequence of ideas you want to tell the reader? <span style="color:royalblue">This is usually different from how you arrive at the paper's current contents.</span>
+- Will the reader be interested/curious when reading my paper?
+
+--
+- Use minimalism to achieve clarity: Can the points be conveyed just as well without X?
+- Do not combine more than one major points in one paragraph.
+
+---
+# Stories within stories within stories
+
+Which sentence do you prefer?
+
 * The promise of our new approach is reduction of bias.
 * Our new approach promises to reduce bias.
 
@@ -67,73 +255,13 @@ I will focus on a few 'big picture' principles instead.
 #### Principles of clarity
 * Make main character subjects.
 * Make important actions verbs.
-
----
-### _Learn as much by writing as by reading_
-.right[Baron John Acton (1834–1902) Historian and Moralist]
-
-
-A _sometimes useful_ advice: avoid writing in passive voice. 
-
---
-
-Over-using passive voice is a common mistake:	
-
-- The bias was reduced by our approach.
-
---
-
-But sometimes can be helpful in discussing abstract ideas:
-
-- Super-efficiency has been seen in some Bayesian estimators.
-
---
-
-A better advice: _make your 'character' the subject and go to your point quickly._
-
-
-```{r echo = FALSE, out.width = "50%", fig.align = 'center'}
-knitr::include_graphics("img/arya.png")
-```
+* Go to your point quickly.
 
 
 ---
-### _The difficulty is not to write, but to write what you mean_
-.right[Robert Louis Stevenson (1850 –- 1894) Novelist and Travel Writer]
+# Edit, edit, edit
 
 
-
-Your paper is not just about the information, it is actual communication.
-
---
-
-Tell a story.
---
-	
-- Why you are writing the paper?
-- What is the sequence of ideas you want to tell the reader?
-- Will the reader be interested/curious when reading my paper?
-
---
-
-Use minimalism to achieve clarity.
---
-
-- Is it possible to preserve my message without that X?
-- Decide 2-3 points you want every reader to remember from your paper.
-- Keep each paragraph to a single message.
-
---
-
-Be precise.
---
-
-- 'worked quite well' or 'had X% better accuracy than'
-- 'did not work' or 'failed to converge'
-
-
-
----
 ### _Every single word that I publish, I write at least six times_
 .right[Paul Halmos, Author, 'How to write mathematics']
 
@@ -141,37 +269,28 @@ Be precise.
 --
 
 + If an explanation 'sort-of' works to you, your reader will be totally lost.
+
 --
 
+- If a word does not convey a precise meaning, it will be misinterpreted or your audience won't trust you. E.g., "worked quite well' or 'had X% better accuracy than', 'did not work' or 'failed to converge'.
+
+
+--
 + Catching your own errors is hard. Reading sections aloud may help. 
---
-
-+ Version control your writing (remember our git tutorial?)
---
-
++ Version control your writing
 + Get someone to read through your writing.
-<!-- + Leave your writing for a while and come back to it. -->
   
---
+---
+# Edit, edit, but do I still need to edit?
 
-#### Editing takes time
---
+#### Editing takes time: 
+The return of repeated editing diminish eventually, but you probably have a deadline before then.  Insufficient editing is obvious and unimpressive. But over-editing is common!
 
-+ The return of repeated editing diminish eventually, but you probably have a deadline before then.  
---
-
-+ Insufficient editing is obvious -- and unimpressive.
---
-
-+ Over-edited papers are rare. But over-editing is common!
---
 
 --
+My strategy is to first write everything I have in mind down, before fine tuning each sentence in the introduction to make them perfectly fit in their boxes (unless I really feel the urge to do that). 
 
-+ My strategy is to first write everything I have in mind down, before fine tuning each sentence in the introduction to make them perfectly fit in their boxes (unless I really feel the urge to do that). 
---
-
-+ You should develop your own strategy that works for you. 
+You should develop your own strategy that works for you. 
 
 
 
@@ -203,89 +322,33 @@ Show the relevant information:
 ---
 # Main takeaways
 1. Do not be afraid of writing.
-2. Write to tell a story: within a sentence, paragraph, and paper.
-3. Be formal, precise, and clear.
-4. Edit your writing.
+1. Know your audience.
+1. Write to tell a story: within a sentence, paragraph, section, and paper.
+1. Be formal, precise, and clear.
+1. Edit your writing.
  
 
---
-.center[
-# Break? 
-]
 
 ---
 # LaTeX 
 
 LaTeX is a software system for document preparation.
 	
-    \documentclass{article}
-    \title{An example}
-    \author{Your Name}
-    \begin{document}
-    \maketitle
-    \section{Introduction}
-    \begin{equation}
-        \mu_{it} = \alpha + \beta_{it}
-    \end{equation}
-    %\bibliographystyle{apalike} 
-    %\bibliography{mybib}
-    \end{document}
-    
 --
 
-How to compile LaTeX documents
 - [Overleaf](https://www.overleaf.com/) is a useful place to start.
+
+--
 - My setup: [Sublime Text](https://www.sublimetext.com/) + [LaTeXTools](https://latextools.readthedocs.io/en/latest/). 
+
+--
 - Using a [Makefile](https://github.com/richardli/Writing-intro/blob/master/tex-examples/Makefile) from command line.
+
+--
 - There are many other editors.
 
-
----
-# BibTex
-
-BibTex is a plain text database.
-
-    @article{cox1972regression, 
-        author = {Cox, D. R.},
-        title = {Regression Models and Life-tables (with Discussion)},
-        year = {1972},
-        journal = {Journal of the Royal Statistical
-        Society, Series B: Methodological},
-        volume = {34},
-        pages = {187--220} 
-    }
-
 --
-
-+ The citation key should be sane, short, and easier to identify for you and your collaborators, e.g. _last-name-year-first-word_
-
-
---
-
-+ Protect upper/lower cases with {}, e.g., `a {B}ayesian approach`; `Mike D'{A}ntoni`
-
---
-
-+ A somewhat strange compile workflow (sometimes handled by your editor internally): LaTeX -> BibTex -> LaTeX -> LaTeX
-
-
----
-# BibTex
-
-+ Google scholar gives these in plain text. So do many publisher's sites. Auto-generated bib entries are (usually) not perfect, so be sure to check them. 
-
---
-
-+ Some bib database management software are also popular: Zotero, Mendeley, JabRef, etc.  
-
---
-
-+ Check with your target journal what bib style they use. Use `\bibliographystyle{}` to specify appropriate styles. `natbib` is usually helpful.
-
---
-
-+ In general, if you wonder if you should cite something, then you probably should. These include: technical report, news report, blog quote, personal communication, data sources, R packages, ... 
-
+- Use BibTex to manage your references.
 
 ---
 # Reproducible research
@@ -313,126 +376,43 @@ What's the benefit for _you_?
 - Collaborators like you more!
 
 ---
-# R Markdown 
-The idea behind dynamic documents: code + narrative = report.
+# Develop a good writing / analysis workflow
 
 --
-
-Others can reproduce the analysis and read your analysis together with codes and data: easier for others to understand your work and identify places of potential improvements.
-
---
-
-The automation of documentation also minimizes cutting and pasting, where errors usually happen.
+Always make sure you can reproduce results, and that you can easily let others reproduce them.
 
 --
+Some specific recommendations:
++ Use relative paths. Check out R package [usethis](https://usethis.r-lib.org/).
++ Set seed.
++ Comment your codes in structured way. Check out syntax of [roxygen2](https://roxygen2.r-lib.org/).
++ Follow a style guide in coding, tidy your codes manually or with `Tidy = TRUE`.
++ Use `session_info()` to document package versions.
++ Use README file to give instructions (package versions, directory structures, any additional dependencies).
 
-It also improves research product pipeline (e.g., periodic routine reports with new data).  
 
 --
+Version control your code and documents with Git. You can use a local workflow for yourself. If you need to collaborate with others, Git becomes more essential. 
 
-R Markdown has a short history. It was introduced by Yihui Xie in the `knitr` package in 2012. It quickly became the more popular format for dynamic documents.
-
----
-# Basic format options
-
-A generic **linear regression** model example:
-
-```{r, out.width = '25%'}
-data(cars)
-fit <- lm(dist ~ speed, data = cars)
-plot(fit)
-```
-
-The slope of the regression is `r round(coef(fit)[2], 3)`.
+My past STAT 200 Git tutorial is [here](https://github.com/richardli/Git-Intro).
 
 
 ---
-# Basic format options
+# Develop a good writing / analysis workflow
 
-Behind the scenes, this is what the codes look like:
+.center[It is a pain to code, experiment, and document your experiments.
 
-    A generic **linear regression** model example:
-
-    `r ''````{r, out.width = '25%'}
-    data(cars)
-    fit <- lm(dist ~ speed, data = cars)
-    plot(fit)
-    `r ''````
-    The slope of the regression is `r knitr::inline_expr("round(coef(fit)[2], 3)")`.
-
---
-
-Basically you need
-+ Text with simple formatting
-+ Code chunks with options 
-+ Inline code results
-
-_More details: [R Markdown Cheat Sheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) and StackOverflow_
-
----
-# Basic format options
-R Markdown document starts with a chunk of YAML metadata:
-
-    ---
-    title: The Real North
-    author: Jon Snow
-    date: 2021-01-01
-    output:
-      pdf_document:
-        toc: true
-    ---
-
-You can (almost) treat the narrative part in the R Markdown file as a LaTeX document and write many backslashes (when compiling pdf output), or you can use markdown syntax.
+But there is also great benefit!]
 
 
 ---
-# Advanced format options
-
-There are many additional packages in R that make output prettier (not all work seamlessly with pdf output unfortunately).
-
-
-```{r, message = FALSE, warning = FALSE}
-library(dplyr)
-library(knitr)
-library(xtable)
-
-fit %>% summary() %>% xtable() %>% kable(digits=4)
-```
-
-
----
-# More about R Markdown
-
-- More tips:
-    + Use relative paths.
-    + Set seed.
-    + Follow a style guide in coding, tidy your codes manually or with `Tidy = TRUE`.
-    + Use `session_info()` to document package versions.
-    + Use README file to give moreb instructions (package versions, directory structures, any additional dependencies).
-
---
-
-- [A longer template example](https://github.com/jkang37/R-Markdown-Template)  from Jizhou Kang.
-
---
-
-- R Markdown is a great tool, but sometimes it falls short. 
-    - For example, if your analysis contains long computation and/or large dataset. 
-    - For your research purposes, it is more important to think about what your reproducible research flow should look like.
-
---
-
-- <span style="color:royalblue">The goal of most writing is to convey the information and message (to others or to yourself). When writing R Markdown documents, rules of good writing still apply.</span>
-
-
-
----
-# Resources
+# Additional resources
 
 #### Writing scientific papers
 + [Writing Technical Papers or Reports (Ehrenberg, 1982)](https://www.jstor.org/stable/2683079)
 + [The Science of Scientific Writing (Gopen and Swan, 1990)](https://www.jstor.org/stable/29774235)
 + [Novelist Cormac McCarthy's tips on how to write a great science paper (Savage and Yeh, 2019)](https://www.nature.com/articles/d41586-019-02918-5)
++[Jennifer Raft's note on reading and writing scientific papers](https://arc.duke.edu/how-to-read-and-understand-a-scientific-paper-a-guide-for-non-scientists/)
 + [John Lee's notes on writing mathematics](https://sites.math.washington.edu/~lee/Courses/583-2005/writing.pdf)
 + [Andrew Gelman's advice on two articles](https://statmodeling.stat.columbia.edu/2009/07/30/advice_on_writi/)
  
