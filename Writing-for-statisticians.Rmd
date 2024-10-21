@@ -134,7 +134,7 @@ Your proposal: what you did and how does it contribute to the field.
 
 **Methods section(s)**: 
 
-+ You probably spend most of the time developing the technical aspect of this section. But you effort and word count is likely not proportional. 
++ You probably spend most of the time developing the technical aspect of this section. But you effort and word count are likely not proportional. 
 
 --
 
@@ -142,7 +142,7 @@ Your proposal: what you did and how does it contribute to the field.
 
 --
 
-+ The section(s) need to be self-contained with clear notations established, assumptions stated, and model choice justified. Do not assume your reader thinks the same way as you and uses the same notations by default. 
++ The section(s) need to be self-contained with clear notations established, assumptions stated, and model choice justified. Do not assume your readers think the same way as you and use the same notations by default. 
 
 --
 
@@ -183,7 +183,7 @@ A good analysis, theorem, or model $\neq$ a good paper.
 
 --
 
-A paper needs to have a story arc:  There should be a problem, potentially some unsuccessful solutions, and a solution that you can recommend (potentially with caveats).
+A paper needs to have a story arc:  There should be a problem, reasons why some solutions are unsuccessful, and a solution that you can recommend (potentially with caveats).
 
 
 ```{r echo = FALSE, out.width = "50%", fig.align = 'center'}
@@ -268,11 +268,11 @@ Which sentence do you prefer?
 #### Editing matters
 --
 
-+ If an explanation 'sort-of' works to you, your reader will be totally lost.
++ If an explanation _sort-of_ works to you, your reader will be totally lost.
 
 --
 
-- If a word does not convey a precise meaning, it will be misinterpreted or your audience won't trust you. E.g., "worked quite well' or 'had X% better accuracy than', 'did not work' or 'failed to converge'.
+- If a word does not convey a precise meaning, it will be misinterpreted or your audience won't trust you. E.g., _worked quite well_ or _had X% better accuracy than_, _did not work_ or _failed to converge_.
 
 
 --
@@ -428,5 +428,12 @@ But there is also great benefit!]
 <br>
 <br>
 .center[
-##[https://github.com/richardli/Writing-intro](https://github.com/richardli/Writing-intro)
+####[https://zehangli.com/teaching/Writing-intro/Writing-for-statisticians.html](https://zehangli.com/teaching/Writing-intro/Writing-for-statisticians.html)
+]
+
+<br>
+Source repository:
+
+.center[
+####[https://github.com/richardli/Writing-intro](https://github.com/richardli/Writing-intro)
 ]
