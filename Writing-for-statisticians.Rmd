@@ -1,7 +1,7 @@
 ---
 title: "Writing for Statisticians"
 author: "Z Richard Li"
-date: Fall, 2024
+date: Fall, 2025
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts]
@@ -35,6 +35,15 @@ Important topics I will not cover today include
 
 I will focus on a few 'big picture' principles instead. 
 
+---
+# Plan for today
+
+1. Why do we write?
+2. How do we write a statistics paper?
+3. How do we write a section of the statistics paper?
+4. How do we write a sentence in a section of the statistics paper?
+5. Then what? Edit!
+6. What else? Some miscellaneous topics if we have time.
 
 
 ---
@@ -93,13 +102,13 @@ All the above are relative to what the **target audience** is. So always be clea
 
 
 ---
-# How do academic papers communicate (1)
+# How do academic papers communicate: the typical story arc
 
-Usually, a statistics paper are structured into Abstract -> Introduction -> Methods -> Evaluations -> Discussion.
+Let's take statistics papers as an example. How do statistics papers usually communicate?
 
 --
 
-**Abstract**: a concise summary of the entire paper (more later)
+Statistics paper are usually structured into Abstract -> Introduction -> Methods -> Evaluations -> Discussion.
 
 --
 
@@ -128,7 +137,7 @@ Your proposal: what you did and how does it contribute to the field.
 
 
 ---
-# How do academic papers communicate (2)
+# How do academic papers communicate: the typical story arc
 
 --
 
@@ -150,7 +159,7 @@ Your proposal: what you did and how does it contribute to the field.
 
 
 ---
-# How do academic papers communicate (3)
+# How do academic papers communicate: the typical story arc
 
 **Result section(s)**: 
 
@@ -177,7 +186,7 @@ Your proposal: what you did and how does it contribute to the field.
 
 
 ---
-# The structure of the paper
+# Take-home message
 
 A good analysis, theorem, or model $\neq$ a good paper.
 
@@ -203,7 +212,7 @@ knitr::include_graphics("img/bran.webp")
 
 
 ---
-# Take the abstract for example
+# Zoom in: take the abstract for example
 
 ```{r echo = FALSE, out.width = "100%", fig.align = 'center'}
 knitr::include_graphics("img/nature.png")
@@ -228,27 +237,36 @@ knitr::include_graphics("img/abstract2.png")
 ---
 # More generally in storytelling
 
-It is impossible to define a specific formula for writing scientific papers. The meat of the paper can have many flavors. 
 
+The general considerations of storytelling holds in all sections of the paper
 
+- Why are you writing this? Does it have a point?
 --
-The general principle of storytelling holds in all sections
 
-- Why you are writing the paper?
 - What is the sequence of ideas you want to tell the reader? <span style="color:royalblue">This is usually different from how you arrive at the paper's current contents.</span>
-- Will the reader be interested/curious when reading my paper?
+--
+
+- Will the reader be interested/curious when reading this?
+--
+
+- Use minimalism to achieve clarity: Can the points be conveyed just as well without X?
+--
+
+- Is this something for a new paragraph? In general, try to avoid combining multiple major points in one paragraph.
 
 --
-- Use minimalism to achieve clarity: Can the points be conveyed just as well without X?
-- Do not combine more than one major points in one paragraph.
+
+It is impossible to define a specific formula for writing scientific papers. The meat of the paper can have many flavors, but the general principles largely hold. 
+
+
 
 ---
 # Stories within stories within stories
 
-Which sentence do you prefer?
+Similarly, when constructing sentences, think of them as mini-stories. For example, 
 
-* The promise of our new approach is reduction of bias.
-* Our new approach promises to reduce bias.
+* Instead of: _The promise of our new approach is reduction of bias._
+* Try: _Our new approach promises to reduce bias._
 
 --
 
@@ -295,7 +313,17 @@ You should develop your own strategy that works for you.
 
 
 ---
-# Writing technical materials
+# Main takeaways
+1. Do not be afraid of writing.
+1. Know your audience.
+1. Write to tell a story: within a sentence, paragraph, section, and paper.
+1. Be formal, precise, and clear.
+1. Edit your writing.
+ 
+
+
+---
+# Misc topic: Writing technical materials
 
 In general, rules of formal writing apply.
 
@@ -320,17 +348,7 @@ Show the relevant information:
 - explain what is in the table/figure in captions.
 
 ---
-# Main takeaways
-1. Do not be afraid of writing.
-1. Know your audience.
-1. Write to tell a story: within a sentence, paragraph, section, and paper.
-1. Be formal, precise, and clear.
-1. Edit your writing.
- 
-
-
----
-# LaTeX 
+# Misc topic:  LaTeX 
 
 LaTeX is a software system for document preparation.
 	
@@ -351,7 +369,7 @@ LaTeX is a software system for document preparation.
 - Use BibTex to manage your references.
 
 ---
-# Reproducible research
+# Misc topic:  Reproducible research
 
 The purpose of research is not just solving a problem, but to teach people how to solve similar problems. 
 
@@ -376,14 +394,14 @@ What's the benefit for _you_?
 - Collaborators like you more!
 
 ---
-# Develop a good writing / analysis workflow
+# Misc topic: Writing + analysis workflow
 
 --
 Always make sure you can reproduce results, and that you can easily let others reproduce them.
 
 --
 Some specific recommendations:
-+ Use relative paths. Check out R package [usethis](https://usethis.r-lib.org/).
++ Use relative paths. Check out R package [here](https://here.r-lib.org/).
 + Set seed.
 + Comment your codes in structured way. Check out syntax of [roxygen2](https://roxygen2.r-lib.org/).
 + Follow a style guide in coding, tidy your codes manually or with `Tidy = TRUE`.
@@ -398,7 +416,7 @@ My past STAT 200 Git tutorial is [here](https://github.com/richardli/Git-Intro).
 
 
 ---
-# Develop a good writing / analysis workflow
+# Misc topic: Writing + analysis workflow
 
 .center[It is a pain to code, experiment, and document your experiments.
 
