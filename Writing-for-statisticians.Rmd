@@ -1,7 +1,7 @@
 ---
 title: "Writing for Statisticians"
-author: "Z Richard Li"
-date: Fall, 2025
+author: "Zehang Richard Li"
+date: Fall, 2026
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts]
@@ -43,7 +43,8 @@ I will focus on a few 'big picture' principles instead.
 3. How do we write a section of the statistics paper?
 4. How do we write a sentence in a section of the statistics paper?
 5. Then what? Edit!
-6. What else? Some miscellaneous topics if we have time.
+6. AI?
+7. What else? Some miscellaneous topics if we have time.
 
 
 ---
@@ -313,12 +314,154 @@ You should develop your own strategy that works for you.
 
 
 ---
+# Writing with AI: what changes?
+
+AI makes it cheap to produce fluent sentences, generate alternatives, and revise repeatedly.
+
+--
+
+But fluency is not judgment. The difficult decisions remain:
++ What is the claim?
++ Who is the audience?
++ What evidence supports the claim?
++ How strong can the conclusion be?
+
+--
+
+A polished paragraph can still hide a weak argument, a changed inferential target, or an unsupported logic fallacy.
+
+--
+
+<span style="color:royalblue">Use AI to shorten the path from rough thought to careful prose, not to skip the thinking.</span>
+
+
+---
+# How do I talk to an AI agent
+
+Which of the following is better?
+
+_Write a paragraph on asymptotic variance_.
+
+_Make this paragraph better_.
+
+_Do not rewrite this paragraph yet. Identify its main claim, supporting evidence, unstated warrant, and weakest transition. Preserve the notation and do not create new claims. Summarize the assessment, and provide two/three alternatives on what to change._
+
+--
+
+In general, think like an editor and treat AI as your junior writer. Make sure you are on the same page with
++ the audience and purpose
++ the main claim
++ what must remain unchanged
++ the problem you want diagnosed
+
+
+---
+# Use AI in separate passes
+
+1. **Frame:** Write down the intended claim and the paragraph's job.
+
+--
+
+2. **Diagnose:** Ask AI to map the argument before changing the prose.
+
+--
+
+3. **Revise:** Request focused alternatives for structure, wording, or transitions.
+
+--
+
+4. **Audit:** Check facts, mathematics, citations, notation, and claim strength.
+
+
+
+--
+
+<span style="color:royalblue">Separate passes make errors easier to see and revisions easier to evaluate.</span>
+
+
+---
+# Your writing should have your voice
+
+Some real examples:
+--
+
+* _The model relies on two assumptions that can impact estimates of small domains if violated._
+* _The model rests on two assumptions, neither of which affects consistency, but both bite in the
+small domains that borrow the most if violated._
+
+--
+
+* _Every estimator reports a point estimate and a 95% interval._
+* _We report the point estimate and 95% interval for every estimator._
+
+--
+
+* _Coverage checks calibration alone, and an estimator can game it with
+wide intervals, so we also report the interval score._
+* _We also report interval scores that evaluate both the coverage and width of the estimated intervals._
+
+
+---
+# Your writing should have your voice
+
+
+* _Our diagnostic is applied before the test label is observed_.
+* _We apply our diagnostics before revealing the test labels_.
+
+--
+
+* _Health records often contain narrative or other unstructured evidence that was not used by the primary prediction rule but that an expert would inspect when judging whether a proposed output is plausible._
+* _For many predictive tasks, the full health records often contain unstructured evidence, such as narratives, that is not used by the primary prediction algorithms. Such information, however, is usually informative for expert to inspect and audit the algorithm predictions._
+
+--
+
+<span style="color:royalblue">You should have an identity in your own writing. No one will take your writing seriously if it is clearly AI-speak (and yes, it's very easy to tell!)</span>
+
+
+---
+# Use AI as a skeptical reader
+
+After a draft exists, ask AI to look for specific problems:
+
+--
+
++ Which quantity appears before it is defined?
++ Any inconsistent notations?
++ Is the writing style consistent?
++ Are texts, equations, and plots consistent with each other?
++ Which claims need more evidence or a citation?
++ What would a skeptical reviewer challenge or misunderstand?
++ Suppose you are Bruno (read the overall research profiles and some representative work from Bruno), what would you think of the paper?
+
+--
+
+<span style="color:red">Ask for a diagnosis first. Decide what is truly a problem before asking AI to repair the text.</span>
+
+ 
+---
+# Teach AI the rules of the project
+
+Keep a short, revisable project style file with:
++ preferred terminology and notation
++ rules for authorial agency
++ claims that must not be overstated
++ citation and capitalization conventions
++ recurring problems to avoid
++ rules for targeted edits versus full sweep of the whole document (especially when working on large projects)
+
+--
+
+<span style="color:royalblue">With the efficiency gain from AI, you should edit your writing more, rather than less.</span>
+ 
+ 
+---
 # Main takeaways
 1. Do not be afraid of writing.
 1. Know your audience.
 1. Write to tell a story: within a sentence, paragraph, section, and paper.
 1. Be formal, precise, and clear.
 1. Edit your writing.
+1. Use AI to diagnose and iterate following the same principle, but keep responsibility for your own writing.
  
 
 
